@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="trainMonitorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="train">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="d_id" Type="Int32" />
+    <Property Name="location" Type="Binary" MaxLength="50" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="trainMonitorEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="trains" EntityType="Self.train" />
+  </EntityContainer>
+</Schema>

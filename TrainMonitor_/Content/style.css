@@ -1,0 +1,103 @@
+body{
+    padding-top:90px;
+    padding-bottom:4px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    margin:40px;
+
+}
+.form-control {
+   width:30%;
+}
+
+
+
+.all_table{
+    color:#0a0440;
+    margin-top:300px;
+}
+thead {
+    color:#f4f3fb;
+    background-color:#7163f2;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+            background-color: #7163f2;
+            font-style:normal;
+            font-size:medium
+
+}
+/*=========================ADMIN PAGE================================*\
+ 
+
+ /* Remove the navbar's default margin-bottom and rounded borders */
+.navbar-inverse {
+        background-color: #7163f2;
+    border-color: #808080;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 10px;
+}
+
+a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+
+.flag {
+    display:inline;
+    padding-top:70px;
+}
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height:250px;margin-top:20px;}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top:25px;
+    background-color: #7163f2;
+    display: block;
+    text-align:center;
+        margin-bottom:90px;
+
+}
+
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding:10px;
+    }
+    .row.content {height:auto;} 
+}
+ #map {
+        height: 500px;width:100%;
+       
+
+ }
+
+ .form-group {
+    margin-bottom: 15px;
+}
+
+
+ /* Set black background color, white text and some padding */
+footer {
+    background-color: #040628;
+    color: white;
+    padding: 11px;
+}
+

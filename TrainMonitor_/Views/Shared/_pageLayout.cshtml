@@ -1,0 +1,133 @@
+﻿@using TrainMonitor_.Views.Shared;
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!-- Compatibality to Internet Explorer Meta not importanat but not to forget-->
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge" />
+    <!-- first mobile meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Train</title>
+
+    <link rel="stylesheet" href="~/Content/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="~/Content/style.css" media="screen" />
+
+
+</head>
+<body dir="@web_Resources.direction">
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" rel="home" href="#" title="Train Monitor">
+                    <img style="max-width:130px;height:50px; margin-top: -15px; border-radius:3px;"
+                         src="~/Content/images/tr1.jpeg">
+                </a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink(web_Resources.home, "admin", "Home")  </li>
+
+
+
+                    <!--************ start of language changing*************-->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@web_Resources.selectLang <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("English", "ChangeCulture", "Home", new { lang = "en", returnUrl = this.Request.RawUrl }, null)</li>
+                            <li>@Html.ActionLink("عربى", "ChangeCulture", "Home", new { lang = "ar-EG", returnUrl = this.Request.RawUrl }, null)</li>
+
+                        </ul>
+                    </li>
+                    <!-- *****************End of language changing*****************-->
+
+                </ul>
+
+
+
+
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> @web_Resources.logout</a></li>
+
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> @web_Resources.notfcn
+
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    @RenderBody()
+
+
+
+    <footer class="container-fluid text-center">
+        <p> &copy; @web_Resources.footer   </p>
+    </footer>
+
+
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- **********************GOOGLE MAPS API HERE*****************************--->
+    <script>
+
+        var src = 'https://drive.google.com/uc?authuser=0&id=1TIlGqezSPKoX3FFJKvemDllD8CUfxUuo&export=download';
+        function initMap() {
+            var uluru = { lat: 31.219059, lng: 29.942400 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru,
+                mapTypeId: 'terrain'
+
+            });
+            //        var marker = new google.maps.Marker({
+            //          position: uluru,
+            //          map: map
+            //        });
+
+
+
+
+            var kmlLayer = new google.maps.KmlLayer(src, {
+                suppressInfoWindows: true,
+                preserveViewport: false,
+                map: map
+            });
+            kmlLayer.addListener('click', function (event) {
+                var content = event.featureData.infoWindowHtml;
+                var testimonial = document.getElementById('capture');
+                testimonial.innerHTML = content;
+            });
+
+
+
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJCS478FmGr0w_wzcMiC19xwjB8CRe9Lk&callback=initMap">
+    </script>
+
+
+</body>
+
+
+</html>

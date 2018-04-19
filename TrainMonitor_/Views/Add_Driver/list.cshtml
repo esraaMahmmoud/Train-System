@@ -1,0 +1,38 @@
+﻿@using TrainMonitor_.Views.Shared;
+@{
+    ViewBag.Title = "list";
+}
+
+
+
+@{
+    Layout = "~/Views/Shared/_pageLayout.cshtml";
+}
+
+
+<div class="container-fluid text-center">
+    <div class="row content">
+
+        <div class="col-sm-10 @web_Resources.t_dir">
+
+
+
+            <div class=" form-group">
+            <h2 style="color:darkgreen">@web_Resources.list</h2>
+
+
+
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:20px">@web_Resources.fullname</label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:20px">@web_Resources.id</label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:20px">@web_Resources.phone</label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:20px">@web_Resources.address </label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:20px">@web_Resources.email</label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:30px">@web_Resources.edit</label>
+            <label style="border:thin;color:dimgray;margin-right:50px;font-size:30px">@web_Resources.delete</label>
+        </div>
+
+            <!---- <button type="button" class="btn btn-primary" style="color:black;margin-left:5px">Edit Data </button>
+
+            <button type="button" class="btn btn-primary" style="color:black;margin-left:5px">Delete Data </button>
+            -->
+          </div></div></div>
